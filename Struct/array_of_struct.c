@@ -18,16 +18,17 @@ void sort_data(Student* ary);
 
 int main(void)
 {
+	// array of structs
 	Student list[5];
 
 	input_data(list);
 
-	printf("# 정렬 전 데이터 ...\n");
+	printf("# Before sorting ...\n");
 	print_data(list);
 
 	sort_data(list);
 
-	printf("# 정렬 후 데이터 ...\n");
+	printf("# After sorting ...\n");
 	print_data(list);
 }
 
@@ -37,11 +38,11 @@ void input_data(Student* ary)
 
 	for (i = 0; i < 5; i++)
 	{
-		printf("학번 : ");
+		printf("Student ID : ");
 		scanf("%d", &ary->num);
-		printf("이름 : ");
+		printf("Name : ");
 		scanf("%s", ary->name);
-		printf("국어, 영어, 수학 점수 : ");
+		printf("Kor, Eng, Mat score : ");
 		scanf("%d%d%d", &ary->kor, &ary->eng, &ary->mat);
 		ary->tot = ary->kor + ary->eng + ary->mat;
 		ary->avg = ary->tot / 3.0;
@@ -74,6 +75,7 @@ void sort_data(Student* ary)
 	int i, j, max;
 	Student temp;
 
+	// sort array structs by descending order
 	for (i = 0; i < 4; i++)
 	{
 		max = i;

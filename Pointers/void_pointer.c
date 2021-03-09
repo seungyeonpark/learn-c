@@ -8,22 +8,23 @@ int main(void)
 	int age1, age2;
 	double height1, height2;
 
-	printf("첫 번째 사람의 나이와 키 입력 : ");
+	printf("Enter the age and height of the first : ");
 	scanf("%d %lf", &age1, &height1);
 
-	printf("두 번째 사람의 나이와 키 입력 : ");
+	printf("Enter the age and height of the second : ");
 	scanf("%d %lf", &age2, &height2);
 
-	printf("# 수정 전 나이와 키 ... \n");
-	printf("첫 번째 사람의 나이와 키 : %d %.1lf\n", age1, height1);
-	printf("두 번째 사람의 나이와 키 : %d %.1lf\n", age2, height2);
+	printf("# Before swapping ... \n");
+	printf("The age and height of the first : %d %.1lf\n", age1, height1);
+	printf("The age and height of the second : %d %.1lf\n", age2, height2);
 
+	// pass the type by string
 	swap("int", &age1, &age2);
 	swap("double", &height1, &height2);
 
-	printf("# 수정 후 나이와 키 ... \n");
-	printf("첫 번째 사람의 나이와 키 : %d %.1lf\n", age1, height1);
-	printf("두 번째 사람의 나이와 키 : %d %.1lf\n", age2, height2);
+	printf("# After swapping ... \n");
+	printf("The age and height of the first : %d %.1lf\n", age1, height1);
+	printf("The age and height of the second : %d %.1lf\n", age2, height2);
 }
 
 void swap(char* type, void* a, void* b)
@@ -32,6 +33,7 @@ void swap(char* type, void* a, void* b)
 	{
 		int temp;
 
+		// void to int
 		temp = *(int*)a;
 		*(int*)a = *(int*)b;
 		*(int*)b = temp;
@@ -40,6 +42,7 @@ void swap(char* type, void* a, void* b)
 	{
 		double temp;
 
+		// void to double
 		temp = *(double*)a;
 		*(double*)a = *(double*)b;
 		*(double*)b = temp;

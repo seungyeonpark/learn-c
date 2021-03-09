@@ -8,10 +8,11 @@ int main(void)
 	char str3[80];
 	char temp[80];
 
-	printf("세 단어 입력 : ");
+	printf("Enter three words : ");
 	scanf("%s %s %s", str1, str2, str3);
 
-	if (strcmp(str1, str2) > 0) // 운영체제마다 strcmp 함수의 반환값이 달라지기 때문에 0 초과를 조건으로 설정
+	// sort alphabetically
+	if (strcmp(str1, str2) > 0)
 	{
 		strcpy(temp, str1);
 		strcpy(str1, str2);

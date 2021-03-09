@@ -2,7 +2,8 @@
 
 int main(void)
 {
-	int i, j, a = 1;
+	int i, j;
+	// initialize from 1 to 20.
 	int ary[5][6] = {
 		{1, 2, 3, 4, 5},
 		{6, 7, 8, 9, 10},
@@ -14,8 +15,11 @@ int main(void)
 	{
 		for (j = 0; j < 5; j++)
 		{
+			// store the sum of each column in the last row
 			ary[i][5] += ary[i][j];
+			// store the sum of each row in the last column
 			ary[4][j] += ary[i][j];
+			// store the sum of all elements in tne last element
 			ary[4][5] += ary[i][j];
 		}
 	}
